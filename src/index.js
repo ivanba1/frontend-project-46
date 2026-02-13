@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import yaml from 'yaml'
 import buildTree from './buildTree.js'
-import format from './bind/index.js'
+import format from './bind/ren.js'
 
 const parseContent = (content, extension) => {
     switch (extension) {
@@ -45,5 +45,4 @@ const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
     const tree = buildTree(data1, data2)
     return format(tree, formatName)
 }
-
 export default genDiff
